@@ -45,7 +45,7 @@ This bot automates the process of creating accounts and using referral codes for
 
 4. Configure the bot config`
    ```sh
-   nano config/config.js
+   nano src/json/config.js
    ```
 
 6. Set up Gmail API credentials:
@@ -67,7 +67,7 @@ Get Gemini ApiKey : [Here](https://aistudio.google.com/app/apikey)
 1. Run the bot:
 
    ```sh
-   npm run start
+   node main.js
    ```
 
 2. Follow the prompts to enter your referral code, address to transfer token and the number of accounts you want to create, and dont forget too choice your solve captcha too.

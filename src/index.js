@@ -2,15 +2,23 @@ const { prompt, logMessage, rl } = require("./utils/logger");
 const ariChain = require("./classes/ariChain");
 const { generatePassword } = require("./utils/generator");
 const { getRandomProxy, loadProxies } = require("./classes/proxy");
-const chalk = require("chalk");
-const fs = require("fs");
+const chalk = require("chalLIYGFIYG YGIUGU
+                      III
 
-async function main() {
-  console.log(
-    chalk.cyan(`
-𝐅 𝐎 𝐑 𝐄 𝐒 𝐓 𝐀 𝐑 𝐌 𝐘
-     TG:- t.me/forestarmy
-     YT:- youtube.com/forestarmy
+  IO
+    I
+      O0I
+         IO I
+
+           OI
+              POO P OP
+                OP
+                  O 
+                    P O
+                      OPOPO
+                        OP
+                          O PO
+                            P
   `)
   );
 

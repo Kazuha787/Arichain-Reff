@@ -1,0 +1,30 @@
+{
+  "name": "arichain-autoref",
+  "version": "1.0.0",
+  "description": "auto reff arichain",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@2captcha/captcha-solver": "^1.3.0",
+    "@antiadmin/anticaptchaofficial": "^1.0.49",
+    "@faker-js/faker": "^9.3.0",
+    "@google-cloud/local-auth": "^3.0.1",
+    "@google/generative-ai": "^0.21.0",
+    "axios": "^1.7.9",
+    "chalk": "^4.1.2",
+    "cheerio": "^1.0.0",
+    "express": "^4.21.2",
+    "fs": "^0.0.1-security",
+    "googleapis": "^144.0.0",
+    "https-proxy-agent": "^7.0.6",
+    "imapflow": "^1.0.178",
+    "mailparser": "^3.7.2",
+    "qs": "^6.14.0",
+    "readline": "^1.3.0",
+    "socks-proxy-agent": "^8.0.5"
+  }
+}

@@ -1,0 +1,8 @@
+{
+    "email": "xyz",
+    "password": "xyz",
+    "geminiApi": "your_gemini_apikey",
+    "prompt": "What is the text in this CAPTCHA image? just answer the text",
+    "captha2Apikey": "xyz",
+    "apiCaptchakey": "your_api_apicaptcha"
+}

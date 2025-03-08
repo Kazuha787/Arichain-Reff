@@ -35,7 +35,7 @@ This bot automates the process of creating accounts and using referral codes for
 2. Install dependencies and setup accounts
 
    ```sh
-   npm install && npm run setup
+   npm install 
    ```
 
 3. Create a `proxy.txt` file in the root directory and add your proxies (one per line)

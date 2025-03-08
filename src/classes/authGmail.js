@@ -1,1 +1,39 @@
-function _0x4f7f(_0x5debdf,_0x20ab02){const _0x57b9f6=_0x57b9();return _0x4f7f=function(_0x4f7f5c,_0x267499){_0x4f7f5c=_0x4f7f5c-0xa7;let _0x34ed39=_0x57b9f6[_0x4f7f5c];return _0x34ed39;},_0x4f7f(_0x5debdf,_0x20ab02);}const _0x1f17c0=_0x4f7f;(function(_0x1cd79f,_0x50ecbf){const _0x45234f=_0x4f7f,_0x1e610d=_0x1cd79f();while(!![]){try{const _0x3414ec=parseInt(_0x45234f(0xb6))/0x1*(parseInt(_0x45234f(0xb9))/0x2)+-parseInt(_0x45234f(0xb5))/0x3*(-parseInt(_0x45234f(0xb1))/0x4)+-parseInt(_0x45234f(0xb2))/0x5+-parseInt(_0x45234f(0xaf))/0x6*(-parseInt(_0x45234f(0xb7))/0x7)+parseInt(_0x45234f(0xbc))/0x8*(parseInt(_0x45234f(0xb0))/0x9)+-parseInt(_0x45234f(0xc0))/0xa+-parseInt(_0x45234f(0xc1))/0xb*(parseInt(_0x45234f(0xac))/0xc);if(_0x3414ec===_0x50ecbf)break;else _0x1e610d['push'](_0x1e610d['shift']());}catch(_0x485b08){_0x1e610d['push'](_0x1e610d['shift']());}}}(_0x57b9,0x300f4));function _0x57b9(){const _0x45479d=['connect','184845GXVyOA','294419diaddl','7qQyHeg','password','2jYhmYd','parse','imap.gmail.com','104vAjvOU','path','../json/config.json','exports','2302760jqDqkq','22bItaqK','⚠️\x20Warning:\x20Self-signed\x20certificate\x20detected.\x20Connection\x20may\x20not\x20be\x20secure.','log','imapflow','❌\x20Error\x20connecting\x20to\x20IMAP\x20server:','SELF_SIGNED_CERT_IN_CHAIN','3897516FNwShq','✅\x20Connected\x20to\x20IMAP\x20server\x20successfully.','email','2242620uGODaQ','215316DcYSfM','8eBuBYT','128585cXpoup','message'];_0x57b9=function(){return _0x45479d;};return _0x57b9();}const {ImapFlow}=require(_0x1f17c0(0xa9)),path=require(_0x1f17c0(0xbd)),fs=require('fs'),configPath=path['resolve'](__dirname,_0x1f17c0(0xbe)),config=JSON[_0x1f17c0(0xba)](fs['readFileSync'](configPath)),confEmail=config[_0x1f17c0(0xae)],pass=config[_0x1f17c0(0xb8)];async function authorize(){const _0x3255f1=_0x1f17c0,_0x380364=new ImapFlow({'host':_0x3255f1(0xbb),'port':0x3e1,'secure':!![],'auth':{'user':confEmail,'pass':pass},'tls':{'rejectUnauthorized':![]},'logger':![]});try{return await _0x380364[_0x3255f1(0xb4)](),console[_0x3255f1(0xa8)](_0x3255f1(0xad)),_0x380364;}catch(_0x6d2bc){console['error'](_0x3255f1(0xaa),_0x6d2bc[_0x3255f1(0xb3)]);_0x6d2bc['code']===_0x3255f1(0xab)&&console['error'](_0x3255f1(0xa7));throw _0x6d2bc;}}module[_0x1f17c0(0xbf)]={'authorize':authorize};
+const { ImapFlow } = require("imapflow");
+const path = require("path");
+const fs = require("fs");
+
+const configPath = path.resolve(__dirname, "../json/config.json");
+const config = JSON.parse(fs.readFileSync(configPath));
+
+const confEmail = config.email;
+const pass = config.password;
+
+async function authorize() {
+  const client = new ImapFlow({
+    host: "imap.gmail.com",
+    port: 993,
+    secure: true,
+    auth: {
+      user: confEmail,
+      pass: pass,
+    },
+    tls: {
+      rejectUnauthorized: false, // Allows self-signed certificates
+    },
+    logger: false,
+  });
+
+  try {
+    await client.connect();
+    console.log("✅ Connected to IMAP server successfully.");
+    return client;
+  } catch (err) {
+    console.error("❌ Error connecting to IMAP server:", err.message);
+    if (err.code === "SELF_SIGNED_CERT_IN_CHAIN") {
+      console.error("⚠️ Warning: Self-signed certificate detected. Connection may not be secure.");
+    }
+    throw err;
+  }
+}
+
+module.exports = { authorize };

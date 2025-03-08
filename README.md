@@ -45,7 +45,7 @@ This bot automates the process of creating accounts and using referral codes for
 
 4. Configure the bot config`
    ```sh
-   nano src/json/config.js
+   nano src/json/config.json
    ```
 
 6. Set up Gmail API credentials:
